@@ -1,0 +1,118 @@
+.container {
+    width: 90%;
+    min-height: 500px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    height: 540px;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    background: linear-gradient(#3a3a3a, #2a2a2a);
+    box-shadow: 0 0 5px 1px #111;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardInfo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 70px;
+}
+
+.cardInfo:nth-child(1) {
+    border-radius: 20px 20px 0 0;
+    background: linear-gradient(#333, #222);
+    justify-content: center;
+}
+
+.cardInfo:nth-child(2) {
+    flex: 7;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    box-sizing: border-box;
+    justify-items: center;
+}
+
+.cardInfo:nth-child(3) {
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(#222, #111);
+    flex-direction: row;
+    justify-content: center;
+}
+
+.shopContainer {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shopContainer:nth-child(1) {
+    justify-content: flex-start;
+}
+
+.info {
+    width: 100%;
+    text-align: left    ;
+}
+
+.button {
+    background: #27ae60;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform .5s, background .5s;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background: #2ecc71;
+    cursor: pointer;
+}
+
+.serviceCard {
+    min-height: 150px;
+    width: 90%;
+    background: #2a2a2a;
+    box-shadow:
+    0 4px 10px #00000066,
+    0 1px 2px #00000099;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition:0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.serviceCard:hover{
+    transform: translateY(-3px);
+    box-shadow:
+    0 8px 18px #00000080,
+    0 3px 6px #00000099;
+}
+
+.serviceText * {
+    max-width: 350px;
+    text-align: start;
+}
+
+.icon {
+    font-size: 30px;
+}

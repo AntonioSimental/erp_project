@@ -1,0 +1,39 @@
+.footer {
+    min-height: 50vh;
+    width: 100%;
+    background-color: #111;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    color: #f5f5f5;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.footertitle {
+    border-bottom: 2px solid #f5f5f5;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.footerlist {
+    list-style: none;
+}
+
+.footeritem {
+    margin-top: 15px;
+}
+
+.footercontainer {
+    width: 100%;
+}
+
+.footercontainerextends {
+    text-align: end;
+}
+
+.footerlogo {
+    width: 60px;
+    margin: 10px 0;
+    border-radius: 20px 0px 20px 0;
+}

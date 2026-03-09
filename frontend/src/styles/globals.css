@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    text-align: justify;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #fff;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #3a3a3a;
+}
+
+th {
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff;
+}
