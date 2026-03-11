@@ -1,0 +1,58 @@
+.container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.containerCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 15px;
+}
+
+.card {
+    width: 100%;
+    min-height: 100px;
+    background: linear-gradient(#2a2a2a, #1a1a1a);
+    box-shadow: 0 2px 4px 1px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.image {
+    width: 25%;
+    border-radius: 50px;
+}
+
+.containerTable {
+    overflow-x: auto;
+    height: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+.graphic {
+    width: 98%;
+    height: 100%;
+    background: linear-gradient(#333, #222);
+    box-shadow: 0 2px 4px 1px #000;
+    border-radius: 20px;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.graphicText {
+    margin-top: 20px;
+    border-bottom: 1px solid #777;
+    min-height: 15px;
+}

@@ -1,0 +1,14 @@
+.btnTheme {
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    background: #bb0;
+    color: #f5f5f5;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btnBlue {
+    background: #50b;
+}

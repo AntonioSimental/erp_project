@@ -154,6 +154,19 @@ input[type=number]::-webkit-inner-spin-button {
     color: #f5f5f5;
 }
 
+.light {
+    background: linear-gradient(135deg, #4a90e2, #1f3c88);
+}
+
+.light:nth-child(3) {
+    background: #fff;
+}
+
+.lightCards {
+    background: linear-gradient(#aaa, #eee);
+    color: #333;
+}
+
 @media (max-width: 480px) {
     .cardContainer {
         border-radius: 0 0 20px 20px;

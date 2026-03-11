@@ -4,7 +4,8 @@ import SectionFlex from "@/src/components/SectionFlex";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk, faBoxArchive } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ThemeBtn from "@/src/components/ThemeBtn";
 
 export default function Inventory() {
   const [products, setProduct] = useState([]);
@@ -23,11 +24,22 @@ export default function Inventory() {
     setProduct([]);
   };
 
+  // Theme
+  const [theme, setTheme] = useState(false);
+  
+    useEffect(() => {
+      const saved = localStorage.getItem("theme");
+      setTheme(saved === "dark");
+    }, []);
+  
+    const color = theme ? "#2a2a2a" : "#f5f5f5";
+
   return (
-    <SectionFlex bg="#2a2a2a">
+    <SectionFlex bg={color}>
+      <ThemeBtn theme={theme} setTheme={setTheme}/>
       <h2 className={styles.title}>Inventory</h2>
       <div className={styles.container}>
-        <div className={styles.menuContainer}>
+        <div className={`${styles.menuContainer} ${theme ? "" : styles.light}`}>
           <h2>Add inventory</h2>
 
           <form className={styles.form} onSubmit={saveProducts}>
@@ -83,7 +95,7 @@ export default function Inventory() {
             />
           </form>
 
-          <div className={styles.productContainer}>
+          <div className={`${styles.productContainer} ${theme ? "" : styles.light}`}>
             <table>
               <thead>
                 <tr>
@@ -96,10 +108,10 @@ export default function Inventory() {
               <tbody>
                 {products.map((data, index) => (
                   <tr key={index}>
-                    <th>{data.serial}</th>
-                    <th>{data.product}</th>
-                    <th>{data.amount}</th>
-                    <th>{data.price}</th>
+                    <td>{data.serial}</td>
+                    <td>{data.product}</td>
+                    <td>{data.amount}</td>
+                    <td>{data.price}</td>
                   </tr>
                 ))}
               </tbody>
@@ -111,9 +123,9 @@ export default function Inventory() {
           </button>
         </div>
 
-        <div className={styles.cardContainer}>
+        <div className={`${styles.cardContainer} ${theme ? "" : styles.light}`}>
           {inventorys.map((data, index) => (
-            <Link key={index} className={styles.card} href="">
+            <Link key={index} className={`${styles.card} ${theme ? "" : styles.lightCards}`} href="">
               <FontAwesomeIcon
                 className={styles.iconcard}
                 icon={faBoxArchive}

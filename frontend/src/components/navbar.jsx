@@ -6,7 +6,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import NavLink from "@/src/components/NavLink";
 import Login from "./sections/Login";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar({ show, children }) {

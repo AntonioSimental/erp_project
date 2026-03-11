@@ -34,6 +34,7 @@ export default function Login({ action }) {
               type="email"
               name="email"
               placeholder="Email"
+              required
             />
             <label htmlFor="password">Password:</label>
             <input
@@ -41,12 +42,14 @@ export default function Login({ action }) {
               type="password"
               name="password"
               placeholder="Password"
+              required
             />
             <input
               className={styles.submit}
               type="submit"
               name="password"
               value="Log-in"
+              required
             />
           </form>
           <div className={styles.account}>
@@ -75,6 +78,7 @@ export default function Login({ action }) {
               type="user"
               name="user"
               placeholder="Name"
+              required
             />
             <label htmlFor="email">Email:</label>
             <input
@@ -82,6 +86,7 @@ export default function Login({ action }) {
               type="email"
               name="email"
               placeholder="Email"
+              required
             />
             <label htmlFor="password">Password:</label>
             <input
@@ -89,12 +94,14 @@ export default function Login({ action }) {
               type="password"
               name="password"
               placeholder="Password"
+              required
             />
             <input
               className={styles.submit}
               type="submit"
               name="register"
               value="Register"
+              required
             />
           </form>
           <div className={styles.account}>
