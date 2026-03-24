@@ -12,13 +12,74 @@ export default function Login({ action }) {
 
   const login = async (e) => {
     e.preventDefault();
-    action()
-    router.push("/main")
+    const userData = Object.fromEntries(new FormData(e.target))
+    try {
+      const data = await fetch("http://localhost:4000/api/login", 
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          credentials: "include",
+          body: JSON.stringify(
+            {
+              correo: userData.email,
+              contrasena: userData.password
+            }
+          )
+        }
+      );
+      const res = await data.json();
+      if (!data.ok) {
+        return alert(res.msg);
+      }
+      alert("Login Succesfull");
+      action()
+      router.push("/main")
+    } catch (err) {
+      alert(err.message)
+    }
   }
 
   const changeLogin = () => {
     setLogState(!logState);
   };
+
+  const regUser = (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target));
+
+    fetch("http://localhost:4000/api/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+          {
+            nombre: data.user,
+            correo: data.email,
+            contrasena: data.password
+          }
+        )
+      }
+    )
+    .then(res => {
+      if (!res.ok) {
+        return res.json().then(data => {
+          throw new Error(data.msg);
+        })
+      }
+
+      return res.json();
+    })
+    .then(res => {
+      alert(res.msg)
+      setLogState(!logState);
+      console.log(res);
+    })
+    .catch(err => alert(err.message))
+  }
 
   return (
     <>
@@ -71,7 +132,7 @@ export default function Login({ action }) {
         // Register module
         <div className={styles.card}>
           <h2>Register</h2>
-          <form className={styles.formContainer}>
+          <form className={styles.formContainer} onSubmit={regUser}>
             <label htmlFor="user">Name:</label>
             <input
               className={styles.input}
